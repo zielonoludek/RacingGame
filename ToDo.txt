@@ -1,4 +1,4 @@
-To do:
+To do (random order):
 1	Movable player
 2	collision system
 3	opponents
@@ -8,3 +8,4 @@ To do:
 7	game manager
 8	split screen
 9	2nd player
+10	camera
