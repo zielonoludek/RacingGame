@@ -1,0 +1,10 @@
+To do:
+1	Movable player
+2	collision system
+3	opponents
+4	scene handler
+5	ui handler
+6	input manager
+7	game manager
+8	split screen
+9	2nd player
