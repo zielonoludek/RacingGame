@@ -1,5 +1,5 @@
 To do (random order):
-1	Movable player
+1	Movable player using new input system
 2	collision system
 3	opponents
 4	scene handler

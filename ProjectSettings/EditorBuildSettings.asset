@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Real-time Positioning System/Scenes/SampleScene.unity
+    path: Assets/Racing Starter Kit/Scenes/SampleScene.unity
     guid: adc28652a668a9646b0352d63f41b808
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 4fcf4d76fe5b02a4384a741be124635e,
+      type: 2}
