@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public int playerNum;
 
-    private Rigidbody rb;
-    private float speed = 10f;
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private float speed = 10f;
+    
+    private Rigidbody rb;  
     private float rotationSpeed = 125f;
     private ActionsEditor playerActions;
 
@@ -15,19 +17,18 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        playerActions = new ActionsEditor();
-        playerActions.Player.Enable();
+        //playerActions = new ActionsEditor();
+        //playerActions.Player.Enable();
 
-        playerActions.Player.Movement.performed += Movement;
+        //playerActions.Player.Movement.performed += Movement;
     }
 
     private void Update()
     {
-        Vector2 inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
-        Vector3 movement = new Vector3(inputVector.x, 0, inputVector.y);
-        rb.AddForce(movement * speed, ForceMode.Force);
+        Vector2 movement = playerInput.actions["Movement"].ReadValue<Vector2>();        
 
-        if (movement != Vector3.zero) transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(movement), rotationSpeed * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Rotate(0, movement.x, 0);
     }
 
     private void Movement(InputAction.CallbackContext contex)
