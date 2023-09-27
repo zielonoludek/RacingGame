@@ -1,30 +1,28 @@
-using System;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerInput playerInput;
     [SerializeField] private float speed = 0f;
-    
+    private ActionsEditor playerActions;
+    private Rigidbody rb;
 
-    private void Awake() => playerInput = GetComponent<PlayerInput>();
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        playerActions = new ActionsEditor();
+        playerActions.Player.Enable();
+    }
 
     private void FixedUpdate()
     {
-        Vector2 movement = playerInput.actions["Movement"].ReadValue<Vector2>();
+        var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
+        var movement = new Vector3(inputVector.x, 0, inputVector.y);
 
-        ChangeVelocity();
-
-        transform.Translate(0, 0, speed * Time.deltaTime);
-        transform.Rotate(0, movement.x, 0);
-    }
-
-    private void ChangeVelocity()
-    {
-        if (playerInput.actions["Acceleration"].IsPressed() && speed < 250) speed += 1.5f;
-        if (playerInput.actions["Break"].IsPressed() && speed > -20) speed -= 10f;
+        if (speed < 250 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
+        else if (speed > -20 && playerActions.Player.Break.ReadValue<float>() > 0) speed -= 10f;
+        else speed = 1;
+        
+        if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
+        rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
     }
 }

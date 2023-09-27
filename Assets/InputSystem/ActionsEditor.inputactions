@@ -16,21 +16,21 @@
                 },
                 {
                     "name": "Acceleration",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6b236fe7-ea94-4bd2-85bb-065cf41bf6bf",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Break",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "570bcd71-d365-44f5-b9e1-992c6b0207f8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -57,31 +57,20 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "down",
+                    "id": "813b9bc6-c6ba-4cb7-9663-038e00679087",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
                     "id": "9f3dca38-a68c-46df-b44d-ffdd17b5fde6",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "3c99c995-bb9c-495f-8187-b5114b8f72ef",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "left",
-                    "id": "95031aff-9471-45c4-bcf7-4846c6d9a5fd",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -91,8 +80,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "4aeae725-317b-4a03-aa84-76440a80fa4c",
-                    "path": "<Keyboard>/rightArrow",
+                    "id": "2fe09d99-7055-4c4b-a6a8-40764ee96f99",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

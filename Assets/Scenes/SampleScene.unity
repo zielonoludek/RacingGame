@@ -619,7 +619,8 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 150
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6135133338478240105, guid: 7e4fa6887650b624e88de5171eef2a3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
