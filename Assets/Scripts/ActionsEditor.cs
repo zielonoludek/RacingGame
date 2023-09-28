@@ -53,6 +53,15 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Reversing"",
+                    ""type"": ""Value"",
+                    ""id"": ""047e0241-92cc-474b-8c0e-1ad134b46919"",
+                    ""expectedControlType"": ""Analog"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -125,11 +134,22 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8ddea96a-783d-469a-81e9-97fb38e6a029"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5d49278-6d54-400b-9c76-7d659d94a3cc"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reversing"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -143,6 +163,7 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Acceleration = m_Player.FindAction("Acceleration", throwIfNotFound: true);
         m_Player_Brake = m_Player.FindAction("Brake", throwIfNotFound: true);
+        m_Player_Reversing = m_Player.FindAction("Reversing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Acceleration;
     private readonly InputAction m_Player_Brake;
+    private readonly InputAction m_Player_Reversing;
     public struct PlayerActions
     {
         private @ActionsEditor m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Acceleration => m_Wrapper.m_Player_Acceleration;
         public InputAction @Brake => m_Wrapper.m_Player_Brake;
+        public InputAction @Reversing => m_Wrapper.m_Player_Reversing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
             @Brake.started += instance.OnBrake;
             @Brake.performed += instance.OnBrake;
             @Brake.canceled += instance.OnBrake;
+            @Reversing.started += instance.OnReversing;
+            @Reversing.performed += instance.OnReversing;
+            @Reversing.canceled += instance.OnReversing;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -245,6 +271,9 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
             @Brake.started -= instance.OnBrake;
             @Brake.performed -= instance.OnBrake;
             @Brake.canceled -= instance.OnBrake;
+            @Reversing.started -= instance.OnReversing;
+            @Reversing.performed -= instance.OnReversing;
+            @Reversing.canceled -= instance.OnReversing;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -267,5 +296,6 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAcceleration(InputAction.CallbackContext context);
         void OnBrake(InputAction.CallbackContext context);
+        void OnReversing(InputAction.CallbackContext context);
     }
 }

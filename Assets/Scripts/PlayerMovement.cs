@@ -18,17 +18,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var brake = 0;
         var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
         var movement = new Vector3(inputVector.x, 0, inputVector.y);
 
         if (speed < 50 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
+        if (speed > -20 && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= 2;
+
         if (playerActions.Player.Brake.ReadValue<float>() > 0)
         {
-            brake = 10;
-            wc.brakeTorque = brake;
+            wc.brakeTorque = 20;
+            speed = 0;
         }
-        if (rb.velocity.x == 0)  speed = 0;
         
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
