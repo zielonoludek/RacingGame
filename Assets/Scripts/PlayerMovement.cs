@@ -1,26 +1,34 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 0f;
     private ActionsEditor playerActions;
     private Rigidbody rb;
+    private WheelCollider wc;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        wc = GetComponent<WheelCollider>();
         playerActions = new ActionsEditor();
         playerActions.Player.Enable();
     }
 
     private void FixedUpdate()
     {
+        var brake = 0;
         var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
         var movement = new Vector3(inputVector.x, 0, inputVector.y);
 
-        if (speed < 250 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
-        else if (speed > -20 && playerActions.Player.Break.ReadValue<float>() > 0) speed -= 10f;
-        else speed = 1;
+        if (speed < 50 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
+        if (playerActions.Player.Brake.ReadValue<float>() > 0)
+        {
+            brake = 10;
+            wc.brakeTorque = brake;
+        }
+        if (rb.velocity.x == 0)  speed = 0;
         
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);

@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Break",
+                    "name": "Brake",
                     "type": "Value",
                     "id": "570bcd71-d365-44f5-b9e1-992c6b0207f8",
                     "expectedControlType": "Analog",
@@ -107,7 +107,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Break",
+                    "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
