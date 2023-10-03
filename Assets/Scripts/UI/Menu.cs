@@ -3,22 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
-    private Button startBtn;
+    [SerializeField] private Button resumeBtn; 
+    [SerializeField] private Button exitToMenuBtn;
+    [SerializeField] private Button quitBtn;
 
     private void Awake()
     {
-        startBtn.onClick.AddListener(StartButton);
+        gameObject.SetActive(false);
+        resumeBtn.onClick.AddListener(ResumeButton);
+        exitToMenuBtn.onClick.AddListener(ExitToMenuButton);
+        quitBtn.onClick.AddListener(QuitButton);
     }
-
-    private void Update()
+    private void ResumeButton()
     {
-
+        gameObject.SetActive(false);
     }
-
-    private void StartButton()
+    private void ExitToMenuButton()
     {
-        gameObject.SetActive(true);
+       
+    }
+    private void QuitButton()
+    {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }

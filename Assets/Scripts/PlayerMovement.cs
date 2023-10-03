@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
         playerActions = new ActionsEditor();
         playerActions.Player.Enable();
     }
-
     private void FixedUpdate()
     {
         var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();

@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Button mainMenu;
+    [SerializeField] private Button start;
+
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject menuPanel;
+
     void Start()
     {
-        
+        mainMenuPanel.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menuPanel.SetActive(true);
+        }
     }
 }

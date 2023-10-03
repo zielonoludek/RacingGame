@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    /*  aditional feature
+    /*  aditional not working feature feature
         will debug and fix it later
     
     private GameObject Player;
