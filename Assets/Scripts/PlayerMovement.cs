@@ -5,12 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 0f;
     private ActionsEditor playerActions;
-    private Rigidbody rb;
     private WheelCollider wc;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         wc = GetComponent<WheelCollider>();
         playerActions = new ActionsEditor();
         playerActions.Player.Enable();
@@ -31,6 +29,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
-        rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }
