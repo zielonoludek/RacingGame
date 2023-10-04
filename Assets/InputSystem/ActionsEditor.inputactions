@@ -24,15 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Brake",
-                    "type": "Value",
-                    "id": "570bcd71-d365-44f5-b9e1-992c6b0207f8",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Reversing",
                     "type": "Value",
                     "id": "047e0241-92cc-474b-8c0e-1ad134b46919",
@@ -106,17 +97,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Acceleration",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ddea96a-783d-469a-81e9-97fb38e6a029",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

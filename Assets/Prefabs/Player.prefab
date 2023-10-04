@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7667489885148617321}
   - component: {fileID: 1050964689032005637}
   - component: {fileID: 7584263199304327863}
-  - component: {fileID: 4506592594680213658}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,45 +97,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!146 &4506592594680213658
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720459720389439961}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0.05, z: 0}
-  m_Radius: 0.8
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1001 &5845051435134669889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,21 +105,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6791945561333770476}
     m_Modifications:
-    - target: {fileID: 1017608831172291359, guid: 47c49f7f8b3c86a4180e085abdd689b2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.6897273
-      objectReference: {fileID: 0}
-    - target: {fileID: 1017608831172291359, guid: 47c49f7f8b3c86a4180e085abdd689b2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 25.042755
-      objectReference: {fileID: 0}
-    - target: {fileID: 1017608831172291359, guid: 47c49f7f8b3c86a4180e085abdd689b2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.842576
-      objectReference: {fileID: 0}
     - target: {fileID: 1017608831172291359, guid: 47c49f7f8b3c86a4180e085abdd689b2,
         type: 3}
       propertyPath: m_LocalRotation.w

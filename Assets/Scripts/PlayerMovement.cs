@@ -18,15 +18,9 @@ public class PlayerMovement : MonoBehaviour
         var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
         var movement = new Vector3(inputVector.x, 0, inputVector.y);
 
-        if (speed < 50 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
+        if (speed < 100 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
         if (speed > -20 && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= 2;
 
-        if (playerActions.Player.Brake.ReadValue<float>() > 0)
-        {
-            wc.brakeTorque = 20;
-            speed = 0;
-        }
-        
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         transform.Translate(0, 0, speed * Time.deltaTime);
     }
