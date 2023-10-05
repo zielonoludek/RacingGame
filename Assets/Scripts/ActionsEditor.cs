@@ -28,6 +28,15 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
             ""id"": ""1f440500-4188-4fda-9ed6-6fab33ef9957"",
             ""actions"": [
                 {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c979f74-f4e0-4237-b763-25c400c0cda6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""faa55de8-3091-485c-ae15-ab0187e0ecad"",
@@ -35,27 +44,20 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Acceleration"",
-                    ""type"": ""Value"",
-                    ""id"": ""6b236fe7-ea94-4bd2-85bb-065cf41bf6bf"",
-                    ""expectedControlType"": ""Analog"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Reversing"",
-                    ""type"": ""Value"",
-                    ""id"": ""047e0241-92cc-474b-8c0e-1ad134b46919"",
-                    ""expectedControlType"": ""Analog"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2992a92a-f3ee-47ff-8b17-de032febd9ab"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""d74be8d7-c278-418f-a0f8-baa3cdd69188"",
@@ -66,6 +68,28 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""bec125ee-c1cc-4d55-933e-d271a34a258c"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""03533a5f-182e-479b-bfc4-7b537070cd2e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
@@ -79,30 +103,8 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""813b9bc6-c6ba-4cb7-9663-038e00679087"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""9f3dca38-a68c-46df-b44d-ffdd17b5fde6"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
-                    ""id"": ""2fe09d99-7055-4c4b-a6a8-40764ee96f99"",
+                    ""id"": ""9f3dca38-a68c-46df-b44d-ffdd17b5fde6"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -112,26 +114,59 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""00b5427f-2d8d-4f22-94d9-805e09c666d2"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""3c99c995-bb9c-495f-8187-b5114b8f72ef"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Acceleration"",
-                    ""isComposite"": false,
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""c5d49278-6d54-400b-9c76-7d659d94a3cc"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""up"",
+                    ""id"": ""a1094025-2754-4ea9-84b3-91eac4239ea1"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Reversing"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2d1887c6-7764-4b27-ada3-629424ead86f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""95031aff-9471-45c4-bcf7-4846c6d9a5fd"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4aeae725-317b-4a03-aa84-76440a80fa4c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -140,9 +175,8 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_Acceleration = m_Player.FindAction("Acceleration", throwIfNotFound: true);
-        m_Player_Reversing = m_Player.FindAction("Reversing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,16 +238,14 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
+    private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_Acceleration;
-    private readonly InputAction m_Player_Reversing;
     public struct PlayerActions
     {
         private @ActionsEditor m_Wrapper;
         public PlayerActions(@ActionsEditor wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @Acceleration => m_Wrapper.m_Player_Acceleration;
-        public InputAction @Reversing => m_Wrapper.m_Player_Reversing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -223,28 +255,22 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Acceleration.started += instance.OnAcceleration;
-            @Acceleration.performed += instance.OnAcceleration;
-            @Acceleration.canceled += instance.OnAcceleration;
-            @Reversing.started += instance.OnReversing;
-            @Reversing.performed += instance.OnReversing;
-            @Reversing.canceled += instance.OnReversing;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Acceleration.started -= instance.OnAcceleration;
-            @Acceleration.performed -= instance.OnAcceleration;
-            @Acceleration.canceled -= instance.OnAcceleration;
-            @Reversing.started -= instance.OnReversing;
-            @Reversing.performed -= instance.OnReversing;
-            @Reversing.canceled -= instance.OnReversing;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -264,8 +290,7 @@ public partial class @ActionsEditor: IInputActionCollection2, IDisposable
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
+        void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
-        void OnAcceleration(InputAction.CallbackContext context);
-        void OnReversing(InputAction.CallbackContext context);
     }
 }

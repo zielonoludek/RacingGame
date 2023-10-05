@@ -1,27 +1,33 @@
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
+
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 0f;
-    private ActionsEditor playerActions;
-    private WheelCollider wc;
+    public int playerNum;
+
+    private PlayerInput playerInput;
+    [SerializeField] private float speed = 10f;
+
+    private Rigidbody rb;
 
     private void Awake()
     {
-        wc = GetComponent<WheelCollider>();
-        playerActions = new ActionsEditor();
-        playerActions.Player.Enable();
+        rb = GetComponent<Rigidbody>();
+        playerInput = GetComponent<PlayerInput>();
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
-        var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
-        var movement = new Vector3(inputVector.x, 0, inputVector.y);
+        Vector2 movement = playerInput.actions["Movement"].ReadValue<Vector2>();
 
-        if (speed < 100 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
-        if (speed > -20 && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= 2;
-
-        if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Rotate(0, movement.x, 0);
+    }
+
+    private void Movement(InputAction.CallbackContext contex)
+    {
+        Vector2 inputVector = contex.ReadValue<Vector2>();
+        rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
     }
 }
