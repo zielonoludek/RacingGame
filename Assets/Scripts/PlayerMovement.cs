@@ -5,11 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 0f;
     private ActionsEditor playerActions;
-    private WheelCollider wc;
 
     private void Awake()
     {
-        wc = GetComponent<WheelCollider>();
         playerActions = new ActionsEditor();
         playerActions.Player.Enable();
     }
@@ -23,5 +21,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         transform.Translate(0, 0, speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("barrier"))
+        {
+            Debug.Log("Car's hittind the barrier!!!");
+            speed = -speed / 2;
+        }
     }
 }
