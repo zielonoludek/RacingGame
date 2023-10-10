@@ -57,9 +57,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
-                    "id": "813b9bc6-c6ba-4cb7-9663-038e00679087",
-                    "path": "<Keyboard>/s",
+                    "name": "right",
+                    "id": "2fe09d99-7055-4c4b-a6a8-40764ee96f99",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -68,9 +68,20 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "up",
-                    "id": "9f3dca38-a68c-46df-b44d-ffdd17b5fde6",
-                    "path": "<Keyboard>/w",
+                    "name": "2D Vector",
+                    "id": "ed20cbf5-03da-4508-8bb4-b365b8074dfe",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "862de5a1-544f-43ab-8872-629ee140cda7",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -80,8 +91,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "2fe09d99-7055-4c4b-a6a8-40764ee96f99",
-                    "path": "<Keyboard>/d",
+                    "id": "531b8170-490f-4c1a-9e77-2cc61e022f24",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -102,8 +113,30 @@
                 },
                 {
                     "name": "",
+                    "id": "9474231a-5e74-4bc9-924e-b66e550ea141",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Acceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c5d49278-6d54-400b-9c76-7d659d94a3cc",
                     "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reversing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6eb9095-361d-4180-8200-9027503a9a14",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
