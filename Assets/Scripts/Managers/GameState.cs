@@ -34,7 +34,6 @@ public class GameState : MonoBehaviour
     {
         SceneManager.LoadScene(gameSettings.MainMenu, LoadSceneMode.Single);
     }
-
     private void LogGameState(string message)
     {
         Debug.Log(message);

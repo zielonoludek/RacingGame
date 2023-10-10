@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         transform.Translate(0, 0, speed * Time.deltaTime);
     }
-
     private void Update()
     {
        if (Time.time - elapsed > powerUpTime && speed == 150)
@@ -36,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
             speed = 100;
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("barrier"))

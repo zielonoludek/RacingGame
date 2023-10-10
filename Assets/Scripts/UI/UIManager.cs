@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuPanel;
-    [SerializeField] private GameObject menuPanel;
-    [SerializeField] private GameObject levelPanel;
+    [SerializeField] public GameObject mainMenuPanel;
+    [SerializeField] public GameObject menuPanel;
+    [SerializeField] public GameObject levelPanel;
 
-    void Start()
+    private void Awake()
     {
         mainMenuPanel.SetActive(true);
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelMenu : MonoBehaviour
@@ -8,7 +9,7 @@ public class LevelMenu : MonoBehaviour
     [SerializeField] private Button L3;
     [SerializeField] private Button exitToMenuBtn;
 
-    [SerializeField] private GameSettings settings;
+    [SerializeField] private GameSettings gameSettings;
 
     private void Awake()
     {
@@ -20,14 +21,17 @@ public class LevelMenu : MonoBehaviour
     }
     private void Level1()
     {
+        SceneManager.LoadScene(gameSettings.L1, LoadSceneMode.Single);
         gameObject.SetActive(false);
     }
     private void Level2()
     {
+        SceneManager.LoadScene(gameSettings.L2, LoadSceneMode.Single);
         gameObject.SetActive(false);
     }
     private void Level3()
     {
+        SceneManager.LoadScene(gameSettings.L3, LoadSceneMode.Single);
         gameObject.SetActive(false);
     }
     private void ExitToMenuButton()

@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Racing Starter Kit/Scenes/SampleScene.unity
     guid: adc28652a668a9646b0352d63f41b808
+  - enabled: 1
+    path: Assets/Scenes/L1.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/L2.unity
+    guid: 284bacc960333834dbedfa47b54df3fb
+  - enabled: 1
+    path: Assets/Scenes/L3.unity
+    guid: 40e19a3084a431646ab0a551c8cf4424
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: fdaa349cbde95b24ab7dece68c283369
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4fcf4d76fe5b02a4384a741be124635e,
       type: 2}
