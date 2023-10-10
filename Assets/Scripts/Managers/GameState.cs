@@ -12,10 +12,10 @@ public class GameState : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            LogGameState("Game Initialized");
 
             LoadSettings();
             LoadMainMenu();
+            Debug.Log("Initialized");
             return;
         }
         Destroy(gameObject);
@@ -28,15 +28,7 @@ public class GameState : MonoBehaviour
     {
         gameSettings = Resources.Load<GameSettings>("GameSettings");
         gameSettings.isGamePaused = false;
-        gameSettings.isLevelRuning = false;
+        gameSettings.isLevelRunning = false;
     }
-    private void LoadMainMenu()
-    {
-        SceneManager.LoadScene(gameSettings.MainMenu, LoadSceneMode.Single);
-    }
-
-    private void LogGameState(string message)
-    {
-        Debug.Log(message);
-    }
+    private void LoadMainMenu() => SceneManager.LoadScene(gameSettings.MainMenu, LoadSceneMode.Single);
 }

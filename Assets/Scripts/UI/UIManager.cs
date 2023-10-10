@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuPanel;
-    [SerializeField] private GameObject menuPanel;
-    [SerializeField] private GameObject levelPanel;
+    [SerializeField] public GameObject mainMenuPanel;
+    [SerializeField] public GameObject menuPanel;
+    [SerializeField] public GameObject levelPanel;
+    [SerializeField] private GameSettings gameSettings;
 
-    void Start()
-    {
-        mainMenuPanel.SetActive(true);
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuPanel.SetActive(true);
+            gameSettings.isGamePaused= !gameSettings.isGamePaused;
+            menuPanel.SetActive(gameSettings.isGamePaused);
         }
     }
 }
