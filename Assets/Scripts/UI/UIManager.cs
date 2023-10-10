@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject levelPanel;
 
     void Start()
     {
