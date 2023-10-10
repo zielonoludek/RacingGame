@@ -8,16 +8,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject mainMenuPanel;
     [SerializeField] public GameObject menuPanel;
     [SerializeField] public GameObject levelPanel;
+    [SerializeField] private GameSettings gameSettings;
 
-    private void Awake()
-    {
-        mainMenuPanel.SetActive(true);
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuPanel.SetActive(true);
+            gameSettings.isGamePaused= !gameSettings.isGamePaused;
+            menuPanel.SetActive(gameSettings.isGamePaused);
         }
     }
 }

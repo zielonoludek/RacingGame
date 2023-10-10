@@ -21,15 +21,19 @@ public class Menu : MonoBehaviour
     }
     private void ResumeButton()
     {
+        gameSettings.isGamePaused = false;
         gameObject.SetActive(false);
     }
     private void ExitToMainMenuButton()
     {
+        gameSettings.isLevelRunning = false;
         SceneManager.LoadScene(gameSettings.MainMenu, LoadSceneMode.Single);
     }
     private void QuitButton()
     {
         Application.Quit();
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

@@ -12,5 +12,5 @@ public class GameSettings : ScriptableObject
     public string L3 = "L3";
 
     public bool isGamePaused;
-    public bool isLevelRuning;
+    public bool isLevelRunning;
 }

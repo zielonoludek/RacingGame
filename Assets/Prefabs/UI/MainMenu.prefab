@@ -48,7 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startBtn: {fileID: 5390963471208499950}
   exitBtn: {fileID: 327454872205618662}
-  uiCanvas: {fileID: 0}
+  uiCanvas: {fileID: 8543936087535773474, guid: d85d41493bab5264cb4ce30048300ee5,
+    type: 3}
+  gameSettings: {fileID: 11400000, guid: 5ff9e4ccc4fedc7478e690fb13930d2f, type: 2}
 --- !u!1 &2858057543230219693
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,15 +79,15 @@ RectTransform:
   m_GameObject: {fileID: 2858057543230219693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.56374264, y: 0.56374264, z: 0.56374264}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 485766645654377771}
   m_Father: {fileID: 191638261863766470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2282420423231980266
@@ -468,8 +470,8 @@ RectTransform:
   m_GameObject: {fileID: 8704681453386871400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.56374264, y: 0.56374264, z: 0.56374264}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1085889959383314027}
   m_Father: {fileID: 191638261863766470}

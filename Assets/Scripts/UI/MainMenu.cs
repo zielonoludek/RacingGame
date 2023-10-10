@@ -20,10 +20,11 @@ public class MainMenu : MonoBehaviour
         uiCanvas.levelPanel.SetActive(true);
         gameObject.SetActive(false);
     }
-
     private void ExitButton()
     {
        Application.Quit();
-       UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
