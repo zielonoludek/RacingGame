@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 0f;
     private ActionsEditor playerActions;
     private float powerUpTime = 1;
-    private float elapsed = 0; 
+    private float elapsed = 0;
+    private float reversingModifier = 2;
+    private float accelerationOffset = 1.5f;
 
     private void Awake()
     {
@@ -20,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
         var inputVector = playerActions.Player.Movement.ReadValue<Vector2>();
         var movement = new Vector3(inputVector.x, 0, inputVector.y);
 
-        if (speed < 100 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += 1.5f;
-        if (speed > -20 && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= 2;
+        if (speed < 100 && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += accelerationOffset;
+        if (speed > -20 && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= reversingModifier;
 
         if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
         transform.Translate(0, 0, speed * Time.deltaTime);
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("barrier"))
         {
             Debug.Log("Car's hitting the barrier!!!");
-            speed = -speed / 2;
+            speed = -speed / reversingModifier;
         }
 
         if (collision.gameObject.CompareTag("PowerUp"))
