@@ -1,27 +1,23 @@
 # RacingGame
- First Future Games Assignment 
+Final assignment of "Fundamentals of C# Programming with Unity3D Engine" course led by Sebastian Bularca.
+I created simple local multiplayer kart racing game. 
 
-Create a 2D or 3D racing game with the following design specifications:
+I tried to write optimalised, easy to understand code. First time I used as many managers in my game. Crating them I learned how useful they are. I didn't use advanced math, I wanted to focus on code structures Sebastian showed us during the curse.
 
-- Should be a racing game with a fixed top down or isometric camera that shows the entire track
-- The track should have a shape of a certain width, with walls that define the shape
-- Game should be up to 2 players, same screen, (split-screen is NOT a requirement). Multiplayer is not required but encouraged.
-- Control should be on the same keyboard, or keyboard/mouse
-- Game should use Unity Physics
-- The two players should be able to bump in each other and with the race walls
-- Some basic physics should be implemented to control the cars but not too complicated like independent wheel controls or anything like that
-- The tracks should contain some simple power ups that alter the car speed or friction
-- There should be 3 levels - you may use the same scene to generate the track or different scenes which involved having a SceneManager to switch between them
-- The game should have a Main Menu for starting a new game etc
-- The game should have a Pause menu for existing the current game
-- Use Asset Store or other sources for free assets to build the track
-- You may ask a friend artist to help, if you wish
-- Using external resources for help is allowed, but plagiarism is not allowed. Add the sources of you inspiration to your assignment presentation
-- You may use any sort of controller support
+# Instructions
+Unity version: 2022.3.9f1
 
-Nice to have:
-- Use the new InputSystem to control the cars. You may use the old one as well.
-- Leaderboards that are saved with the game between sessions
-- A simple car selector and customization UI
-- Cars can have health and fuel!
-- You are allowed to have some sort of enemies shooting at you
+Used Packages: Input System
+
+To play game in editor, random scene from Assets/Scenes should be loaded.
+
+Controls:
+- Right player uses WSAD (forward, reverse, left, right)
+- Left player uses arrows for movement
+
+# Inspirations
+- FG lessons
+- Local Multiplayer:  https://onewheelstudio.com/blog/2022/2/3/split-screen-multi-player-with-unitys-new-input-system
+- Unity Manual:  https://docs.unity3d.com/Manual/index.html
+- Scriptable objects: https://bronsonzgeb.com/index.php/2021/04/10/using-unity-scriptable-objects-to-solve-architecture-problems/
+- Input System: https://youtu.be/Yjee_e4fICc?si=JQ6vxWJHzIdM886n
