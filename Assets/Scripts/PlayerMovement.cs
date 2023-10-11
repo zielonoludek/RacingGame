@@ -1,10 +1,11 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 { 
     [SerializeField] GameSettings settings;
     private ActionsEditor playerActions;
+    public  TMP_Text speedText;
 
     private float speed = 0f;
     private float minSpeed = -20f;
@@ -34,22 +35,25 @@ public class PlayerMovement : MonoBehaviour
 
         if (settings.isLevelRunning && !settings.isGamePaused)
         {
-            if (speed < maxSpeed && playerActions.Player.Acceleration.ReadValue<float>() > 0) speed += accelerationOffset;
-            else if (speed < maxSpeed && playerActions.Player1.Acceleration.ReadValue<float>() > 0) speed += accelerationOffset;
-            
-            if (speed > minSpeed && playerActions.Player.Reversing.ReadValue<float>() > 0) speed -= reversingModifier;
-            else if (speed > minSpeed && playerActions.Player1.Reversing.ReadValue<float>() > 0) speed -= reversingModifier;
+            if (speed < maxSpeed && 
+                (   playerActions.Player.Acceleration.ReadValue<float>() > 0 || playerActions.Player1.Acceleration.ReadValue<float>() > 0)  ) 
+                speed += accelerationOffset;
+
+            if (speed > minSpeed && 
+                (   playerActions.Player.Reversing.ReadValue<float>() > 0 || playerActions.Player1.Reversing.ReadValue<float>() > 0)    )   
+                speed -= reversingModifier;
 
             if (movement != Vector3.zero) transform.Rotate(0, movement.x, 0);
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
     }
     private void Update()
-    {
+    {  
        if (Time.time - elapsed > powerUpTime && speed == powerUpSpeed)
         {
             speed = maxSpeed;
         }
+        speedText.SetText("Speed: " + Mathf.Round(Mathf.Abs(speed)));
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -58,8 +62,10 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Car's hitting the barrier!!!");
             speed = -speed / reversingModifier;
         }
-
-        if (collision.gameObject.CompareTag("PowerUp"))
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("PowerUp"))
         {
             Debug.Log("Power up!!!");
             speed = powerUpSpeed;
